@@ -1,6 +1,12 @@
 pipeline {
 
     agent any
+    environment {
+            DOCKER_TOKEN = credentials('docker-push-secret')
+            DOCKER_USER = 'tsadimas'
+            DOCKER_SERVER = 'ghcr.io'
+            DOCKER_PREFIX = 'ghcr.io/tsadimas/pms8-fastapi'
+        }
 
     stages {
 
